@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("http://127.0.0.1:8000/serverapp/customerentry/", function(data){
+     var htmlString = "";
+
+  for (i = 0; i < data.length; i++) {
+    htmlString += "<p>" + data[i];
+    htmlString += '.</p>';
+
+  }
+document.write(htmlString)
+	 console.log(data[1])
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Get Customer</button>
+
+</body>
+</html>
